@@ -47,6 +47,18 @@
             position:relative;
             top:45px;
         }
+
+        div.yahei {
+            font-family: "Microsoft YaHei", 微软雅黑;
+        }
+
+        li.yahei {
+            font-family: "Microsoft YaHei", 微软雅黑;
+        }
+        ul.yehei{
+            font-family: "Microsoft YaHei", 微软雅黑;
+        }
+
     </style>
 </head>
 <body class="no-skin">
@@ -113,19 +125,19 @@
 <div id="startContent" class="container">
     <!--左侧边栏菜单选项--------------------------------------->
     <div class='col-md-3'>
-        <div id="sidebar" class="sidebar responsive">
+        <div id="sidebar" class="sidebar responsive ">
             <!--START--动态加载侧边栏---STRAT------------------------------------------------------------->
             <script id="tpzsk" type="text/template">
-                <ul class="nav nav-list" id="sideMenu">
+                <ul class="nav nav-list yahei" id="sideMenu">
                     {@each subclass as it}
-                    <li class="" id="${it.id}">
+                    <li class="yahei" id="${it.id}">
                         <a href="#" class="dropdown-toggle">
                             <span class="menu-text"> ${it.title} </span>
                             <b class="arrow fa fa-angle-down"></b>
                         </a>
-                        <ul class="submenu">
+                        <ul class="submenu yahei">
                             {@each it.subclass as it2}
-                            <li class="article" id="${it2.id}" >
+                            <li class="article yahei" id="${it2.id}" >
                                 <a href="#" class="dropdown-toggle ">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     ${it2.title}
@@ -141,8 +153,8 @@
         </div>
     </div>
     <div class='col-md-9'>
-        <div id="doc-title">简介</div>
-        <div id="doc-content">
+        <div id="doc-title" class="yahei">简介</div>
+        <div id="doc-content" class="yahei">
 
             <p>中移互联测评中心是为广大企业客户和移动开发者提供真机测试服务的云平台，拥有大量热门机型，提供7x24全天候服务。</p>
 
