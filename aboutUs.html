@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+<div id="carousel-about" class="carousel slide" data-ride="carousel">
+     <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox" >
+
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-about" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-about" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            type : "get", //默认为get
+            dataType : "json",
+            cache:false,
+            url :  "/api/gallery/lists?parentId=0",
+            success : function(response){
+                if (response && response.code == "200") {
+                    var carousels = response.data.items;
+                    loadCarousel(carousels);
+                }else {
+                    console.log("获取轮播图片信息失败！");
+                    alert("获取轮播图片信息失败！") ;
+                }
+             },
+            error:function(){
+                console.log("ajax error");
+                alert("ajax error");
+            }
+        });
+    });
+function loadCarousel(carousels) {
+    $.each(carousels,function(i,carousel){
+        var div = $("<div/>");
+        if(i == 0) {
+            div.attr("class","item active");
+        } else {
+            div.attr("class","item");
+        }
+        var img = $("<img/>");
+        img.attr("src",carousel.imgUrl);
+        if(carousel.text != "") {
+            img.attr("alt",carousel.text);
+        }
+
+        $(".carousel-inner").append(div.append(img));
+    });
+}
+</script>
+</body>
+</html>

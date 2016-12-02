@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>测评中心知识库</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Icons -->
+    <link href="/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Animate -->
+    <link href="/css/animate.css" rel="stylesheet">
+
+    <!-- Bootsnav -->
+    <link href="/css/bootsnav.css" rel="stylesheet">
+    <link href="/css/overwrite.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/color.css" rel="stylesheet">
+
+
+    <!--slider  ttt-->
+    <link rel="stylesheet" href="/zsk/css/ace.min.css"/>
+
+
+    <!--content -->
+    <link rel="stylesheet" href="/zsk/css/my-zsk.css"/>
+
+
+
+
+
+    <![endif]-->
+    <style type="text/css">
+        #myNavbar {
+            margin-top: -72px;
+        }
+        #sidebar {
+            position:relative;
+            top:33px;
+        }
+    </style>
+</head>
+<body class="no-skin">
+<!-- Start Navigation -->
+<nav id="myNavbar" class="navbar navbar-inverse   bootsnav">
+    <div class="container">
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/images/brand/logo.png" class="logo" alt="LOGO">
+            </a>
+
+        </div>
+        <div></div>
+        <!-- End Header Navigation -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                <li>
+                    <a href="/index.html" >首页</a>
+                </li>
+                <li class="dropdown">
+                    <a href="/capability/main.html" class="dropdown-toggle" data-toggle="dropdown">测评能力</a>
+                    <ul class="dropdown-menu" id="capMenu">
+                    </ul>
+                </li>
+                <li>
+                    <a href="/testCase/main.html">案例库</a>
+
+                </li>
+                <li>
+                    <a href="/zsk/index01.html" class="active">知识库</a>
+                </li>
+                <li>
+                    <a onclick="javascript:showModalDialog()" style="cursor:pointer">关于我们</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+    <div class="navbar-container" id="navbar-container">
+        <!-- #section:basics/sidebar.mobile.toggle -->
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!--<div class="nav-search" id="nav-search">
+        <form class="form-search">
+							<span class="input-icon">
+								<input type="text" placeholder="Search ..." class="nav-search-input"
+                                       id="nav-search-input" autocomplete="off"/>
+								<i class="ace-icon fa fa-search nav-search-icon"></i>
+							</span>
+        </form>
+    </div>--><!-- /.nav-search -->
+
+</nav>
+<!-- End Navigation -->
+<div id="startContent" class="container">
+    <!--左侧边栏菜单选项--------------------------------------->
+    <div class='col-md-3'>
+        <div id="sidebar" class="sidebar responsive">
+            <!--START--动态加载侧边栏---STRAT------------------------------------------------------------->
+            <script id="tpzsk" type="text/template">
+                <ul class="nav nav-list" id="sideMenu">
+                    {@each subclass as it}
+                    <li class="" id="${it.id}">
+                        <a href="#" class="dropdown-toggle">
+                            <span class="menu-text"> ${it.title} </span>
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+                        <ul class="submenu">
+                            {@each it.subclass as it2}
+                            <li class="article" id="${it2.id}" >
+                                <a href="#" class="dropdown-toggle ">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    ${it2.title}
+                                </a>
+                        </li>
+                            {@/each}
+                        </ul>
+                    </li>
+                    {@/each}
+                </ul>
+            </script>
+            <!--END---动态加载侧边栏----END------------------------------------------------------------>
+        </div>
+    </div>
+    <div class='col-md-9'>
+        <div id="doc-title">简介</div>
+        <div id="doc-content">
+
+            <p>中移互联测评中心是为广大企业客户和移动开发者提供真机测试服务的云平台，拥有大量热门机型，提供7x24全天候服务。</p>
+
+            <p>
+                我们致力于提供专业、稳定、全面、高价值的自动化测试能力，以及简单易用的使用流程、贴心的技术服务，并且帮助客户以最低的成本、最高的效率发现APP中的各类隐患（APP崩溃、各类兼容性问题、功能性问题、性能问题等），减少用户流失，提高APP质量和市场竞争力。</p>
+
+            <p>
+                依托于中移互联网公司深厚的移动测试技术积累，针对不同的测试场景和需求，研发了一套独特的测试方法和体系，可以涵盖Android、iOS、YunOS、H5等不同的平台体系，我们在内部服务了MM商场、和飞信、139邮箱、和彩云等一系列超级App，积累了丰富的移动测试经验。</p>
+
+            <p>同时，在“发现问题” -&gt; “定位问题” -&gt; “解决问题”
+                整个链路上做了非常多的优化和提升，可以帮助客户快速的发现问题，并且辅助迅速定位问题，最后通过各类修复建议促进问题快速解决。通过一整套测试能力网络，使得我们的测试效果非常出众，远远高于业界水平。</p>
+
+            <p>中移互联测评中心是为广大企业客户和移动开发者提供真机测试服务的云平台，拥有大量热门机型，提供7x24全天候服务。</p>
+        </div>
+    </div>
+</div>
+</div>
+<!--end content-->
+<!-- 点击"关于我们"后弹窗 -->
+<div class="modal fade" id="popWin" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item"  id="aboutUs"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<!--footer start-->
+<footer id="bootFooter" class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 qrcode">
+                <img src="../images/qrcode.gif" width="90" height="90">
+
+                <p> 扫一扫关注我们的微信公众号</p>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fa fa-phone"></i> 020-51856688
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o"></i> yhtycp@139.com
+                    </li>
+                    <li>
+                        <i class="fa fa-location-arrow"></i>广州市天河区高塘路636号
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="footerCopyRight" class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a></span>&nbsp;&nbsp;
+                <span> Copyright &copy; 中国移动版权所有</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <span>中华人民共和国增值业务经营许可证编号：A2B1B2-201000001</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="back_to_top" title="回到顶部">
+    <img src="/images/back_to_top.png">
+</div>
+
+<!-- START JAVASCRIPT -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Bootsnavs -->
+<script src="/js/bootsnav.js"></script>
+
+
+<!-- ace scripts -->
+<!--<script src="js/ace-elements.min.js"></script>-->
+<script src="/admin/js/ace.min.js"></script>
+<script src="/js/juicer-min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            cache:false,
+            url: "/api/category/id/90",
+            dataType: "json",
+            success: function (response) {
+                var tpzsk = document.getElementById("tpzsk").innerHTML;
+                var htmlmenu = juicer(tpzsk, response.data);
+                $("#sidebar").append(htmlmenu);
+            },
+            error: function(jqXHR) {
+                alert("错误：" + jqXHR);
+            }
+        });
+
+        //加载测评能力导航菜单和栏目信息
+        $.ajax({
+            type : "get", //默认为get
+            dataType : "json",
+            cache:false,
+            url :  "/api/category/lists?parentId=88",
+            success : function(response){
+                if (response && response.code == "200") {
+                    var capabilities = response.data.items;
+                    loadCapMenu(capabilities);
+                }else {
+                    console.log("获取测评能力信息失败！");
+                    alert("获取测评能力信息失败！") ;
+                }
+            },
+            error:function(){
+                console.log("ajax error");
+                alert("ajax error");
+            }
+        });
+    });
+
+    function loadCapMenu(capabilities) {
+        $.each(capabilities, function(i,capability){
+            var li = $("<li/>");
+            var a = $("<a/>");
+            var href = "/capability/detail.html?cid=" + capability.id + "&cname=" + capability.title ;
+            a.attr("href",href);
+            a.html(capability.title);
+            $("#capMenu").append(li.append(a));
+        });
+    }
+    $("#sidebar").on("click", ".article",  function () {
+
+        var data = {
+            cid : $(this).attr("id"),
+            insub: true,
+            size : 1,
+            page: 1
+        };
+        $.ajax({
+            type : "get", //默认为get
+            dataType : "json",
+            data:data,
+            cache:false,
+            url :  "/api/contents/article/lists",
+            success : function(response){
+                if (response && response.code == "200") {
+                    var article = response.data.items[0];
+                    if(article) {
+                        var id = article.id;
+                        $.ajax({
+                            type : "get", //默认为get
+                            dataType : "json",
+                            cache:false,
+                            url :  "/api/admin/content/id/" + id,
+                            success : function(response){
+                                if (response && response.code == "200") {
+                                    var article = response.data;
+                                    loadArticle(article);
+                                }else {
+                                    console.log("获取知识库文章信息失败！");
+                                    alert("获取知识库文章信息失败！") ;
+                                }
+                            },
+                            error:function(){
+                                console.log("ajax error");
+                                alert("ajax error");
+                            }
+                        });
+                    }
+
+                }else {
+                    console.log("获取知识库文章信息失败！");
+                    alert("获取知识库文章信息失败！") ;
+                }
+            },
+            error:function(){
+                console.log("ajax error");
+                alert("ajax error");
+            }
+        });
+
+    });
+    function loadArticle(article) {
+        $("#doc-title").html(article.title);
+        $("#doc-content").html(article.text);
+    }
+</script>
+
+<!--<script>
+    $(document).ready(function () {
+         $("#sidebar").on("click", ".article",  function () {
+            var data = {
+                cid : $(this).attr("id"),
+                insub: true,
+                size : 1,
+                page: 1
+            };
+          $.get("/api/contents/article/lists", data, function(resp){
+                console.log(resp);
+                $("#doc-title").html(resp.data.items[0].title);
+                $("#doc-content").html(resp.data.items[0].text);
+            });
+        });
+    });
+</script>-->
+
+
+<script>
+    function showModalDialog() {
+        var frameSrc = "/aboutUs.html";
+        $("#aboutUs").attr("src", frameSrc);
+        $('#popWin').modal("show");
+    }
+
+//返回顶部
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 50) {
+            $('#back_to_top').fadeIn();
+        }
+        else {
+            $('#back_to_top').fadeOut();
+        }
+    });
+    $('#back_to_top').click(function () {
+        $('html,body').animate({scrollTop: 0}, 500);
+    });
+
+</script>
+</body>
+</html>

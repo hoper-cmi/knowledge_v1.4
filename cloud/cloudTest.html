@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>云测平台</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Icons -->
+    <link href="../css/font-awesome.css" rel="stylesheet">
+<!--<style>
+    html { overflow-y:hidden; }
+</style>-->
+
+
+
+</head>
+<body>
+<img width="100%" height="100%" id="login"  style="cursor:pointer">
+<script src="../js/jquery.min.js"></script>
+<script>
+    var imgSrc = ['../images/login_cloud.jpg','../images/welcome_cloud.jpg','../images/index_cloud.jpg'];
+    var curIndex = 0;
+    $(function(){
+        $("#login").attr('src',imgSrc[curIndex]);
+        $("#login").click(function(){
+            $(this).attr('src',imgSrc[++curIndex%3]);
+            });
+    });
+</script>
+</body>
+</html>

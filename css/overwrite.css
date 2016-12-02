@@ -34,7 +34,7 @@ ul.cart-list > li.total > .btn {
     }
 
     nav.navbar .navbar-brand img.logo {
-        width: 50px;
+        width: 160px;
     }
 
     nav.navbar li.dropdown ul.dropdown-menu {
@@ -172,7 +172,7 @@ nav.navbar.navbar-inverse ul.nav > li.dropdown > a {
 }
 
 nav.navbar.navbar-inverse li.dropdown ul.dropdown-menu > li > a {
-    color: #999;
+    color: #fff;
 }
 
 nav.navbar.navbar-inverse ul.nav .dropdown-menu h1,
@@ -268,11 +268,11 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
 
     nav.navbar.navbar-inverse.navbar-transparent.dark {
         background-color: rgba(0, 0, 0, 0.3);
-        border-bottom: solid 1px #999;
+        border-bottom: solid 1px #fff;
     }
 
     nav.navbar.navbar-inverse.navbar-transparent.dark .attr-nav {
-        border-left: solid 1px #999;
+        border-left: solid 1px #fff;
     }
 
     nav.navbar.navbar-inverse.no-background.white .attr-nav > ul > li > a,
@@ -302,7 +302,7 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
     }
 
     nav.navbar.navbar-inverse ul.nav li.dropdown ul.dropdown-menu > li > a {
-        color: #999;
+        color: #fff;
         border-bottom: solid 1px #303030;
     }
 
@@ -313,7 +313,7 @@ nav.navbar-inverse.navbar-full .navbar-toggle {
 
     nav.navbar.navbar-inverse .dropdown .megamenu-content .col-menu ul > li > a {
         border-bottom: solid 1px #303030;
-        color: #999 !important;
+        color: #fff !important;
     }
 
     nav.navbar.navbar-inverse .dropdown .megamenu-content .col-menu.on:last-child .title {

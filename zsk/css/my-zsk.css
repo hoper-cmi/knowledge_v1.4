@@ -1,0 +1,126 @@
+/*搜索框内容*/
+#doc {
+    margin: 0 auto;
+    overflow: hidden;
+    min-height: 80px;
+    margin-top: 50px;
+}
+
+#doc #search {
+    margin: 0 auto;
+    width: 760px;
+    height: 40px;
+}
+
+#doc #search #search_txt {
+    color: black;
+    height: 38px;
+    border: 1px solid #ddd;
+    width: 562px;
+    padding-left: 30px;
+    outline: 0;
+}
+
+#doc #search #search_btn {
+    width: 80px;
+    height: 42px;
+    margin: 0 0 0 10px;
+    background-color: #f2f4f6;
+    border: 0px;
+    position: relative;
+    left: -6px;
+    outline: 0;
+    cursor: pointer;
+}
+
+#doc #search .search_icon {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 10px;
+    height: 11px;
+    /*background: url('/platform/mtl/images/doc-search.png') center center no-repeat;*/
+    position: relative;
+    /*left: 10px;*/
+    top: -27px;
+}
+
+
+/*内容标题*/
+#doc-title {
+    width: auto;
+    margin-top: 35px;
+    border-left: 4px solid #00a2d3;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    padding-left: 12px;
+    background-color: #f2f4f6;
+
+}
+
+/*内容展示*/
+#doc-content {
+    width: 100%;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    font-size: 14px;
+}
+#doc-content * {
+    font-size: inherit;
+}
+#doc-content h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+#doc-content h2 {
+    font-size: 15px;
+    font-weight: bold;
+}
+#doc-content h3 {
+    font-size: 14px;
+    font-weight: bold;
+}
+#doc-content p {
+    line-height: 30px;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 2em;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: 400;
+    letter-spacing: .1;
+    color: #222;
+}
+#doc-content a {
+    color: #0782C1;
+}
+#doc-content ul {
+    margin-left: 30px;
+}
+#doc-content ul li {
+    list-style-type: initial;
+    margin-top: 10px;
+}
+#doc-content ol {
+    margin-left: 30px;
+}
+#doc-content ol li {
+    margin-top: 10px;
+}
+#doc-content table {
+    border: solid #000000;
+    border-width: 1px 1px 1px 1px;
+}
+#doc-content td,
+#doc-content th {
+    border: solid #000000;
+    border-width: 1px 1px 1px 1px;
+    padding: 10px 10px;
+}
+#doc-content img {
+    max-width: 900px;
+}

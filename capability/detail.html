@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>测评中心知识库</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Icons -->
+    <link href="../css/font-awesome.css" rel="stylesheet">
+
+    <!-- Animate -->
+    <link href="../css/animate.css" rel="stylesheet">
+
+    <!-- Bootsnav -->
+    <link href="../css/bootsnav.css" rel="stylesheet">
+    <link href="../css/overwrite.css" rel="stylesheet">
+    <link href="../css/color.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+<!-- Start Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top  bootsnav">
+    <div class="container">
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/images/brand/logo.png" class="logo" alt="LOGO">
+            </a>
+        </div>
+        <div></div>
+        <!-- End Header Navigation -->
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                <li>
+                    <a href="/index.html" >首页</a>
+                </li>
+                <li class="dropdown">
+                    <a href="/capability/main.html" class="dropdown-toggle active" data-toggle="dropdown">测评能力</a>
+                    <ul class="dropdown-menu" id="capMenu">
+                    </ul>
+                </li>
+                <li>
+                    <a href="/testCase/main.html">案例库</a>
+                </li>
+                <li>
+                    <a href="/zsk/index01.html">知识库</a>
+                </li>
+                <li>
+                    <a onclick="javascript:showModalDialog()" style="cursor:pointer">关于我们</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+<!-- End Navigation -->
+
+
+<!-- end banner -->
+
+<!--start content-->
+<div class="container">
+    <div class="content" id="page">
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="fa fa-home home-icon"></i>
+                <a href="main.html">测评能力</a>
+            </li>
+            <li class="active"></li>
+        </ul>
+
+        <div align="center">
+            <h1><span id="pgTitle"></span></h1><br>
+            &nbsp;&nbsp;<span id="pgAddTime" class="text-muted"></span>&nbsp;&nbsp;<span id="pgViewCount" class="text-muted"></span>
+        </div>
+        <div  id="pgSummary">
+        </div>
+        <div id="pgText">
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div id="examples">
+            <h4>相关案例:</h4>
+        </div>
+    </div>
+</div>
+    <!--end content-->
+<!-- 点击"关于我们后弹窗 -->
+<div class="modal fade" id="popWin" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item"  id="aboutUs"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 弹窗结束 -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 qrcode">
+                    <img src="../images/qrcode.gif" width="90" height="90">
+
+                    <p> 扫一扫关注我们的微信公众号</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fa fa-phone"></i> 020-51856688
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o"></i> yhtycp@139.com
+                        </li>
+                        <li>
+                            <i class="fa fa-location-arrow"></i>广州市天河区高塘路636号
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a></span>&nbsp;&nbsp;
+                    <span> Copyright &copy; 中国移动版权所有</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>中华人民共和国增值业务经营许可证编号：A2B1B2-201000001</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- START JAVASCRIPT -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<!-- utility scripts -->
+<script src="../admin/js/util.js" type="text/javascript"></script>
+<!-- Bootsnavs -->
+<script src="../js/bootsnav.js"></script>
+<script>
+    (function ($) {
+        $.getUrlParam = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return r[2];
+            return null;
+        }
+    })(jQuery);
+    var cid;
+    $(function () {
+       cid = $.getUrlParam('cid');
+        var cname = decodeURI($.getUrlParam('cname'));
+        $(".breadcrumb>.active").html(cname);
+        //加载测评能力导航菜单和栏目信息
+        $.ajax({
+            type : "get", //默认为get
+            dataType : "json",
+            cache:false,
+            url :  "/api/category/lists?parentId=88",
+            success : function(response){
+                if (response && response.code == "200") {
+                    var capabilities = response.data.items;
+                    loadCapMenu(capabilities);
+                }else {
+                    console.log("获取测评能力信息失败！");
+                    alert("获取测评能力信息失败！") ;
+                }
+            },
+            error:function(){
+                console.log("ajax error");
+                alert("ajax error");
+            }
+        });
+        function loadCapMenu(capabilities) {
+            $.each(capabilities, function(i,capability){
+                var li = $("<li/>");
+                var a = $("<a/>");
+                var href = "/capability/detail.html?cid=" + capability.id + "&cname=" + capability.title ;
+                a.attr("href",href);
+                a.html(capability.title);
+                $("#capMenu").append(li.append(a));
+            });
+        }
+
+        //获取栏目信息
+        $.ajax({
+            type : "get", //默认为get
+            dataType : "json",
+            cache:false,
+            url :  "/api/contents/page/lists?cid=" + cid,
+            success : function(response){
+                if (response && response.code == "200") {
+                    var content = response.data.items;
+                    if(content.length > 0)
+                         loadContent(content);
+                }else {
+                    console.log("获取测评能力信息失败！");
+                    alert("获取测评能力信息失败！") ;
+                }
+            },
+            error:function(){
+                console.log("ajax error");
+                alert("ajax error");
+            }
+        });
+        //获取相关案例
+        $.ajax({
+            type : "get", //默认为get
+            dataType : "json",
+            cache:false,
+            url :  "/api/contents/article/lists?cid=" + cid,
+            success : function(response){
+                if (response && response.code == "200") {
+                    var examplse = response.data.items;
+                    if(examplse.length > 0)
+                         loadExample(examplse);
+                }else {
+                    console.log("获取栏目信息失败！");
+                    alert("获取终端栏目信息失败！") ;
+                }
+            },
+            error:function(){
+                console.log("ajax error");
+                alert("ajax error");
+            }
+        });
+    });
+    //加载栏目信息
+    function loadContent(content) {
+        var pgContent = content[0];
+        var page = $("#page");
+        page.find("#pgTitle").html(pgContent.title);
+        page.find("#pgAddTime").html(new Date(pgContent.addTime).Format("yyyy-MM-dd"));
+        page.find("#pgViewCount").html(pgContent.viewCount + "阅读");
+        page.find("#pgSummary").html(pgContent.summary).attr("class","summary");
+        page.find("#pgText").html(pgContent.text);
+    }
+    //加载相关案例
+    function loadExample(examplse) {
+        var btRow;
+        $.each(examplse, function(i,example){
+            if(!btRow) {
+                btRow = $("<div/>");
+                btRow.attr("class","row");
+                var btCol = $("<div/>");
+                btCol.attr("class","col-md-4 col-md-offset-5");
+                var button = $("<a/>");
+                var href = "/testCase/main.html?cid=" + cid;
+                button.attr({"href":href,"class":"btn btn-primary"});
+                button.html("更多案例&gt;&gt;");
+                btRow.append(btCol.append(button));
+            }
+           if(i == 3) return false;//最多显示3条案例
+            var row = $("<div/>");
+            row.attr("class","row");
+            var col1 = $("<div/>");
+            col1.attr("class","col-md-1");
+            var img = $("<img/>");
+            img.css({"width":"50px","height":"50px","align":"right"});
+            if(example.thumbnail !="") {
+                img.attr("src",example.thumbnail);
+            } else {
+                img.attr("src","/images/icon/default1.jpg");
+            }
+            col1.append(img);
+            var col11 = $("<div/>");
+            col11.attr("class","col-md-11");
+            var row2 = $("<div/>");
+            row2.attr("class","row");
+            var a =  $("<a/>");
+            var href = "/testCase/example.html?id=" + example.id;
+            a.attr("href",href);
+            a.append(example.title);
+            row2.append(a);
+            var row3 = $("<div/>");
+            row3.attr("class","row");
+            var span =  $("<span/>");
+            span.attr("class","text-muted");
+            span.css({"font-size":"12px"});
+            span.html(new Date(example.addTime).Format("yyyy-MM-dd") + "&nbsp;&nbsp;" + example.viewCount + "阅读");
+            row3.append(span);
+            col11.append(row2).append(row3);
+            row.append(col1).append(col11);
+            $("#examples").append(row);
+        });
+        if(btRow) {
+            $("#examples").append(btRow);
+        }
+    }
+    function showModalDialog() {
+        var frameSrc = "/aboutUs.html";
+        $("#aboutUs").attr("src", frameSrc);
+        $('#popWin').modal("show");
+    }
+
+</script>
+
+</body>
+</html>
