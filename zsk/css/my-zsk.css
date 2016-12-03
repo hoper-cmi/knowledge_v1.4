@@ -1,3 +1,21 @@
+#myNavbar {
+    margin-top: -72px;
+}
+#sidebar {
+    position:relative;
+    top:33px;
+}
+#bootFooter{
+    position:relative;
+    top:45px;
+}
+
+span.yahei {
+    font-family: "Microsoft YaHei", 微软雅黑;
+}
+a.yehei{
+    font-family: "Microsoft YaHei", 微软雅黑;
+}
 /*搜索框内容*/
 #doc {
     margin: 0 auto;
@@ -92,7 +110,6 @@
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     font-weight: 400;
-    letter-spacing: .1;
     color: #222;
 }
 #doc-content a {

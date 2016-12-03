@@ -22,44 +22,12 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/color.css" rel="stylesheet">
 
-
-    <!--slider  ttt-->
+    <!--slider -->
     <link rel="stylesheet" href="/zsk/css/ace.min.css"/>
-
-
     <!--content -->
     <link rel="stylesheet" href="/zsk/css/my-zsk.css"/>
+    <!--</style>-->
 
-
-
-
-
-    <![endif]-->
-    <style type="text/css">
-        #myNavbar {
-            margin-top: -72px;
-        }
-        #sidebar {
-            position:relative;
-            top:33px;
-        }
-        #bootFooter{
-            position:relative;
-            top:45px;
-        }
-
-        div.yahei {
-            font-family: "Microsoft YaHei", 微软雅黑;
-        }
-
-        li.yahei {
-            font-family: "Microsoft YaHei", 微软雅黑;
-        }
-        ul.yehei{
-            font-family: "Microsoft YaHei", 微软雅黑;
-        }
-
-    </style>
 </head>
 <body class="no-skin">
 <!-- Start Navigation -->
@@ -128,17 +96,17 @@
         <div id="sidebar" class="sidebar responsive ">
             <!--START--动态加载侧边栏---STRAT------------------------------------------------------------->
             <script id="tpzsk" type="text/template">
-                <ul class="nav nav-list yahei" id="sideMenu">
+                <ul class="nav nav-list " id="sideMenu">
                     {@each subclass as it}
-                    <li class="yahei" id="${it.id}">
+                    <li class="" id="${it.id}">
                         <a href="#" class="dropdown-toggle">
-                            <span class="menu-text"> ${it.title} </span>
+                            <span class="menu-text yahei"> ${it.title} </span>
                             <b class="arrow fa fa-angle-down"></b>
                         </a>
-                        <ul class="submenu yahei">
+                        <ul class="submenu ">
                             {@each it.subclass as it2}
                             <li class="article yahei" id="${it2.id}" >
-                                <a href="#" class="dropdown-toggle ">
+                                <a href="#" class="dropdown-toggle yahei">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     ${it2.title}
                                 </a>
@@ -153,8 +121,8 @@
         </div>
     </div>
     <div class='col-md-9'>
-        <div id="doc-title" class="yahei">简介</div>
-        <div id="doc-content" class="yahei">
+        <div id="doc-title" style="font-size: 14px;font-family: Microsoft YaHei, 微软雅黑;" >简介</div>
+        <div id="doc-content">
 
             <p>中移互联测评中心是为广大企业客户和移动开发者提供真机测试服务的云平台，拥有大量热门机型，提供7x24全天候服务。</p>
 
