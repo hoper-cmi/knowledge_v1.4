@@ -287,6 +287,8 @@
                     var article = response.data.items[0];
                     if(article) {
                         var id = article.id;
+//                       这里面加载四级目录
+
                         $.ajax({
                             type : "get", //默认为get
                             dataType : "json",
