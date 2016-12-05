@@ -1,15 +1,19 @@
+
 #myNavbar {
     margin-top: -72px;
 }
 #sidebar {
     position:relative;
-    top:33px;
+    top:45px;
 }
 #bootFooter{
     position:relative;
     top:45px;
 }
-
+#footerCopyRight{
+    position:relative;
+    top:45px;
+}
 span.yahei {
     font-family: "Microsoft YaHei", 微软雅黑;
 }
