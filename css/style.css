@@ -469,7 +469,7 @@ pre span {
 .content {
     border: 1px solid #999;
     border-radius: 6px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5);
     padding: 20px;
     margin: 50px 20px 50px 20px;
 }

@@ -642,6 +642,9 @@
             beforeProcessing: function () {
 
             },
+            loadBeforeSend:function (xhr) {
+                xhr.setRequestHeader("Access-Token",accessToken);
+            },
             loadComplete: function () {
                 var table = this;
                 setTimeout(function () {

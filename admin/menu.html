@@ -679,6 +679,9 @@
                             enableTooltips(table);
                         }, 0);
                     },
+                    loadBeforeSend:function (xhr) {
+                        xhr.setRequestHeader("Access-Token",accessToken);
+                    },
                 });
                 $(subgrid_selector).jqGrid("navGrid", subgridPager_selector,
                         {
@@ -802,7 +805,9 @@
             pager: pager_selector,
             altRows: true,
             //toppager: true,
-
+            loadBeforeSend:function (xhr) {
+                xhr.setRequestHeader("Access-Token",accessToken);
+            },
             loadComplete: function () {
                 var table = this;
                 setTimeout(function () {

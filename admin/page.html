@@ -492,6 +492,9 @@
                                 </form>
                             </div>
                         </div>
+                        <div id="confirmDlg" title="删除">
+                            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>删除所选记录?</p>
+                        </div>
                         <div id="viewDlg" >
                             <div id="content">
                                 <div align="center">
@@ -518,7 +521,7 @@
             <div class="footer-content">
 						<span class="bigger-120">
 							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							Application &copy; 2013-2016
 						</span>
 
                 &nbsp; &nbsp;
@@ -635,6 +638,9 @@
             beforeProcessing: function () {
 
             },
+            loadBeforeSend:function (xhr) {
+                xhr.setRequestHeader("Access-Token",accessToken);
+            },
             loadComplete: function () {
                 var table = this;
                 setTimeout(function () {
@@ -688,7 +694,7 @@
                     addfunc : openDialog4Adding,
                     editfunc : openDialog4Updating,
                     viewfunc:viewRecord,
-                    delfunc:deleteRecord
+                    delfunc:openDialog4Deleting
                 },
                 {
                     //edit record form
@@ -1066,7 +1072,6 @@
     }
     //删除
     var deleteRecord = function () {
-        var consoleDlg = $("#consoleDlg");
         var id = $(grid_selector).jqGrid("getGridParam", "selrow");
         if (!id) {
             alert("请先选择需要删除的行!");
@@ -1079,7 +1084,6 @@
             dataType : 'json',
             success : function(response) {
                 if (response && response.code == "200") {
-                    consoleDlg.dialog( "close" );
                     $(grid_selector).trigger("reloadGrid");
                     alert("删除成功！");
                 }else{
@@ -1121,6 +1125,22 @@
         }
     });
 
+    $( "#confirmDlg" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: 400,
+        modal: true,
+        buttons: {
+            "删除": function() {
+                $( this ).dialog( "close" );
+                deleteRecord();
+            },
+            "取消": function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
 
     var openDialog4Adding = function() {
         var consoleDlg = $("#consoleDlg");
@@ -1189,7 +1209,10 @@
 
         }
     }
-
+    var openDialog4Deleting = function () {
+        var confirmDlg =  $("#confirmDlg");
+        confirmDlg.dialog("open");
+    }
 //辅助类
     var addSelOption = function(jq) //方法addSelOption : 为匹配对象添加一项"请选择"， jq ： jQuery对象
     {

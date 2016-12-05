@@ -667,6 +667,9 @@
                         repeatitems: false,
                         id: "id"
                     },
+                    loadBeforeSend:function (xhr) {
+                        xhr.setRequestHeader("Access-Token",accessToken);
+                    },
                     loadComplete: function () {
                         var table = this;
                         setTimeout(function () {
@@ -802,6 +805,9 @@
 
             beforeProcessing: function () {
 
+            },
+            loadBeforeSend:function (xhr) {
+                xhr.setRequestHeader("Access-Token",accessToken);
             },
             loadComplete: function () {
                 var table = this;
