@@ -18629,20 +18629,23 @@ input.typeahead.scrollable ~ .tt-dropdown-menu {
 .no-skin .nav-list > li {
     border-color: #e5e5e5
 }
-
+/*修改侧边栏border左侧样式*/
 .no-skin .nav-list > li > a {
     background-color: #f8f8f8;
-    color: #585858
+    color: #585858;
+    border-left:solid 1px #e5e5e5;
 }
 
 .no-skin .nav-list > li > a:focus {
     background-color: #f8f8f8;
     color: #1963aa
 }
+/*修改左侧边栏菜单样式*/
 
 .no-skin .nav-list > li:hover > a {
     background-color: #fff;
     color: #266cad
+
 }
 
 .no-skin .nav-list > li.open > a {
