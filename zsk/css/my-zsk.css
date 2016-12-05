@@ -10,7 +10,10 @@
     position:relative;
     top:45px;
 }
-
+#footerCopyRight{
+    position:relative;
+    top:45px;
+}
 span.yahei {
     font-family: "Microsoft YaHei", 微软雅黑;
 }
