@@ -291,7 +291,7 @@
                             type : "get", //默认为get
                             dataType : "json",
                             cache:false,
-                            url :  "/api/admin/content/id/" + id,
+                            url :  "/api/contents/id/" + id,
                             success : function(response){
                                 if (response && response.code == "200") {
                                     var article = response.data;

@@ -176,12 +176,12 @@
         getCapabilityInfo();
        id = $.getUrlParam('id');
 
-        //加载栏目信息
+        //加载案例信息
         $.ajax({
             type : "get", //默认为get
             dataType : "json",
             cache:false,
-            url :  "/api/admin/content/id/" + id,
+            url :  "/api/contents/id/" + id,
             success : function(response){
                 if (response && response.code == "200") {
                     var example = response.data;
