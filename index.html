@@ -31,6 +31,9 @@
     <div class="container">
         <!-- Start Header Navigation -->
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-bars"></i>
+            </button>
             <a class="navbar-brand" href="/index.html">
                 <img src="images/brand/logo.png" class="logo" alt="LOGO">
             </a>
@@ -84,8 +87,8 @@
     <div class="linear" id="procedure">
         <div align="center"><h3>测试流程&nbsp;&nbsp;Test Procedure</h3></div>
     </div>
-    <div class="procedure">
-        <!--<img src="../images/procedure.png" height="350px" width="884px">-->
+    <div>
+        <img src="../images/procedure.png"  width="100%">
     </div>
 
 
@@ -93,11 +96,13 @@
     <div class="linear">
         <div align="center"><h3>测试终端&nbsp;&nbsp;Terminal Library</h3></div>
     </div>
-    <table  style="width:100%; margin: 50px 0px;line-height: 50px">
+    <!--<table class="terminal">
 <tr id="terminal">
 </tr>
-    </table>
+    </table>-->
+    <div id="terminal" class="terminal">
 
+    </div>
 </div>
 <!--end content-->
 <!-- 点击"关于我们"后弹窗 -->
@@ -189,7 +194,7 @@
             },
             error:function(){
                 console.log("ajax error");
-                alert("ajax error");
+                alert("网络连接错误！");
             }
         });
       //加载终端库栏目
@@ -197,7 +202,7 @@
             type : "get", //默认为get
             dataType : "json",
             cache:false,
-            url :  "/api/device/lists?size=8&page=1",
+            url :  "/api/device/lists?size=6&page=1",//最多加载8张图片
             success : function(response){
                 if (response && response.code == "200") {
                     var terminals = response.data.items;
@@ -209,7 +214,7 @@
             },
             error:function(){
                 console.log("ajax error");
-                alert("ajax error");
+                alert("网络连接错误！");
             }
         });
     });
@@ -236,7 +241,7 @@ function loadCapMenu(capabilities) {
               return false;
           }
           var divCol = $("<div/>");
-          divCol.attr("class","col-md-4");
+          divCol.attr("class","col-xs-12 col-sm-6 col-md-4");
           var divThumbnail = $("<div/>");
           divThumbnail.attr("class","thumbnail");
           var a = $("<a/>");
@@ -260,7 +265,7 @@ function loadCapMenu(capabilities) {
       });
   }
     //加载终端图片
-function loadTerminal(terminals) {
+/*function loadTerminal(terminals) {
     $.each(terminals, function(i,terminal){
         var td = $("<td/>");
         td.css("text-align","center");
@@ -268,8 +273,16 @@ function loadTerminal(terminals) {
         img.attr("src",terminal.imgUrl);
         $("#terminal").append(td.append(img).append("<br/>").append(terminal.title));
     });
-}
-
+}*/
+    function loadTerminal(terminals) {
+        $.each(terminals, function(i,terminal){
+            var divCol = $("<div/>");
+            divCol.attr("class","col-xs-12 col-sm-6 col-md-2");
+            var img = $("<img>");
+            img.attr("src",terminal.imgUrl);
+            $("#terminal").append(divCol.append(img).append("<br/>").append(terminal.title));
+        });
+    }
     function showModalDialog() {
         var frameSrc = "/aboutUs.html";
         $("#aboutUs").attr("src", frameSrc);
